@@ -1,0 +1,13 @@
+---
+- name: 패키지 설치
+  yum:
+    name: 
+    - gnome-tweaks
+    - gnome-extensions-app
+    state: latest
+
+
+- name: GNOME2 확장 설정
+  # gnome-extension enable <기능>
+  command: "gnome-extensions enable {{item}}"
+  with_items: "{{extensions}}"

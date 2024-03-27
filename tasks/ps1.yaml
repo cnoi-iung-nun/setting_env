@@ -1,0 +1,10 @@
+---
+- name: PS1 변수 색 표시하기 및 zsh
+  template:
+    src: templates/.bashrc.j2
+    dest: ~/.bashrc
+
+- name: 디렉토리 복사 - $HOME/.local/share/blesh/
+  copy:
+    src: files/blesh
+    dest: ~/.local/share/

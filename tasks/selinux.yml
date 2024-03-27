@@ -1,0 +1,12 @@
+---
+# vi /etc/selinux/config
+# setenforce 0 
+- name: /etc/selinux/config 파일 설정 -permissive
+  lineinfile:
+    path: /etc/selinux/config
+    regexp: '^SELINUX'
+    line: SELINUX=permissive
+
+- name: setenforce 명령 실행 -permissive로 
+  command:
+    cmd: setenforce 0
